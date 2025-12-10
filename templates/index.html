@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js">
   <!--
+	
 	<![endif]-->
   <head>
     <meta charset="utf-8">
@@ -44,8 +45,7 @@
     <link href="https://fonts.cdnfonts.com/css/clambake-october-six" rel="stylesheet">
     <!-- Modernizr JS -->
     <script src="{{ url_for ('static', filename='js/modernizr-2.6.2.min.js') }}"></script>
-    <!-- <link rel="stylesheet" href="{{ url_for ('static', filename='countdown/css/simplyCountdown.theme.default.css') }}" />
-    <script src="{{ url_for ('static', filename='countdown/dist/simplyCountdown.min.js') }}"></script> -->
+    <!-- <link rel="stylesheet" href="{{ url_for ('static', filename='countdown/css/simplyCountdown.theme.default.css') }}" /><script src="{{ url_for ('static', filename='countdown/dist/simplyCountdown.min.js') }}"></script> -->
     <!-- fontawesome -->
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous"> -->
     <!-- Bootstrap -->
@@ -56,288 +56,310 @@
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.1/dist/sweetalert2.min.css" rel="stylesheet">
   </head>
   <body>
-	    <div class="row g-0">
-			<!-- Kolom kiri -->
-			<div class="d-none d-md-block col-md-1 col-lg-2 col-xl-3" style="background-color: #ffffff;">
-			</div>
-
-			<!-- Kolom tengah HOME -->
-			<div class="col-12 col-md-10 col-lg-8 col-xl-6">
-				
-				<div class="fh5co-loader">
-				</div>
-
-				
-				<div id="page">
-					<header id="fh5co-header" class="fh5co-cover" role="banner" style="height: 100%;" data-stellar-background-ratio="0.5">
-						
-						<div class="overlay">
-						</div>
-
-						<!-- HOME -->
-						<div class="container" id="homewedding" 
-							style="min-height:107dvh; 
-								width:100%; 
-								margin:0; 
-								padding:0;
-								background-image: url('/static/images/bg.jpg'); 
-								background-position: center; 
-								background-repeat: no-repeat; 
-								background-size: cover;">
-							<div class="row headernya">
-								<div class="col-md-8 col-md-offset-2 text-center">
-								<!-- <img src="{{ url_for ('static', filename='images/utama.png') }}" style="width: 200px; height: auto; border-radius: 50%; margin-top: 20px;" alt=""> -->
+    <div class="row g-0">
+      <!-- Kolom kiri -->
+      <div class="d-none d-md-block col-md-1 col-lg-2 col-xl-3" style="background-color: #ffffff;"></div>
+      <!-- Kolom tengah HOME -->
+      <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+        <div class="fh5co-loader"></div>
+          <header id="fh5co-header" class="fh5co-cover" role="banner" style="" data-stellar-background-ratio="0.5">
+            <!-- HOME -->
+            <div class="container" id="homewedding" style="min-height:107dvh; 
+                width:100%; 
+                margin:0; 
+                padding:0;
+                background-image: url('/static/images/bg.jpg'); 
+                background-position: center; 
+                background-repeat: no-repeat; 
+                background-size: cover;">
+              <div class="row headernya">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                  <!-- <img src="{{ url_for ('static', filename='images/utama.png') }}" style="width: 200px; height: auto; border-radius: 50%; margin-top: 20px;" alt=""> -->
                   <div class="display-t">
                     <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                    <img src="{{ url_for ('static', filename='images/utama.png') }}" style="margin-top: 10px; width: 200px; height: auto; border-radius: 50%;" alt="">
-                    <h1 class="animate-box" style="color: white !important; font-size: 50px !important; margin-top: 10px;">Restian &amp; Ihyak</h1>
-                    <h4 style="margin-bottom: 25px; font-size: 17px; color: white !important; text-shadow: var(--shadow) !important; font-family: 'Clambake October Six', sans-serif;">Kepada Bapak/Ibu/Saudara/i, <br>
+                      <img src="{{ url_for ('static', filename='images/utama.png') }}" style="margin-top: 10px; width: 200px; height: auto; border-radius: 50%;" alt="">
+                      <h1 class="animate-box" style="color: white !important; font-size: 50px !important; margin-top: 10px;">Restian &amp; Ihyak</h1>
+                      <h4 style="margin-bottom: 25px; font-size: 17px; color: white !important; text-shadow: var(--shadow) !important; font-family: 'Clambake October Six', sans-serif;">Kepada Bapak/Ibu/Saudara/i, <br>
+                        <br>
+                        <span style="color: white !important; font-size: 25px !important; color: #ffffff; font-family: 'Clambake October Six', sans-serif;"></span>
+                      </h4>
                       <br>
-                      <span style="color: white !important; font-size: 25px !important; color: #ffffff; font-family: 'Clambake October Six', sans-serif;"></span>
-                    </h4>
-                    <br>
-                    <a class="animate-box" href="#weddings" id="buka" onclick="enableScroll()">
-                      <i class="fa fa-envelope-open"></i>&nbsp;&nbsp;Buka Undangan </a>
+                      <a class="animate-box" href="#weddings" id="buka" onclick="enableScroll()">
+                        <i class="fa fa-envelope-open"></i>&nbsp;&nbsp;Buka Undangan </a>
                     </div>
                   </div>
-								</div>
-							</div>
-						</div>
-						
-						<!-- SAVE THE DATE -->
-						<div class="container" style="min-height:107dvh; 
-							width:100%; 
-							margin:0; 
-							padding:0;
-							background-image: url('/static/images/save2.png'); 
-							background-position: center; 
-							background-repeat: no-repeat; 
-							background-size: cover;">
-
-							<!-- Div paling atas: The Wedding Of -->
-							<div class="text-center animate-box">
-                <div style="margin-top: 60px;">
                 </div>
-
-								<span style="color: white !important; font-size: 15px !important; 
-									font-weight: bold; font-family: 'Clambake October Six', sans-serif !important;">
-									The Wedding Of
-								</span>
-								<h1 style="font-family: 'Sacramento', Arial, serif; 
-									color: white !important; font-size: 50px !important;">
-									Restian &amp; Ihyak
-								</h1>
-							</div>
-
-              <div id="weddings">
-              </div>
-
-							<!-- Konten utama -->
-							<div class="row">
-								<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box"
-										style="margin-top: 250px;">
-									<p style="font-family: 'Clambake October Six', sans-serif; 
-										color: white; font-size: 12px;">
-										Kami berharap Anda <br> menjadi bagian dari hari istimewa kami 
-									</p>
-									<span class="simply-countdown animate-box"></span>
-									<p style="padding-top: 10px; color: white !important; font-size: 20px !important; 
-										font-family: 'Clambake October Six', sans-serif;">31 Desember 2023</p>
-									<br>
-									<a class="animate-box" href="#eventdate" id="savedate"> Save the Date</a>
-								</div>
-							</div>
-						</div>
-					</header>
-				</div>
-
-			<!-- Kolom kanan -->
-			<div class="d-none d-md-block col-md-1 col-lg-2 col-xl-3" style="background-color: #ffffff;">
-			</div>
-		</div>
-
-		<!-- ===================== NAVBAR BAWAH (awalnya disembunyikan) ===================== -->
-		<nav id="bottomNav" class="fixed-bottom navbar mb-4" style="display: none; box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; 
-			background-color: white; width: 50%;">
-			<a class="nav-link sosmed" href="#homewedding" style="background-color: rgb(1, 130, 216); border-radius: 5px; padding: 7px 8px 6px 8px;">
-				<i class="fa fa-home" style="color: white; font-size: 23px; padding-bottom: 2px;"></i>
-			</a>
-			<a class="nav-link sosmed" href="#couplewedding" style="background-color: rgb(1, 130, 216); border-radius: 5px; padding: 7px 8px 6px 8px;">
-				<i class="fa fa-heart" style="color: white; font-size: 21px; padding-bottom: 2px;"></i>
-			</a>
-			<a class="nav-link sosmed" href="#rsvpwedding" style="background-color: rgb(1, 130, 216); border-radius: 5px; padding: 7px 8px 6px 8px;">
-				<i class="fa fa-commenting" style="color: white; font-size: 21px; padding-bottom: 3px;"></i>
-			</a>
-			<a class="nav-link sosmed" href="#eventdate" style="background-color: rgb(1, 130, 216); border-radius: 5px; padding: 7px 8px 6px 8px;">
-				<i class="fa fa-calendar" style="color: white; font-size: 21px; padding-bottom: 3px;"></i>
-			</a>
-		</nav>
-			
-      <div id="fh5co-couple" style="height: 100%; background-image:url('/static/images/bg-utama.jpeg'); 
-        background-position: center; 
-        background-repeat: no-repeat; 
-        background-size: cover;">
-          <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-              <!--<h2 style="color: rgb(45, 94, 156);">Kami Yang Berbahagia</h2>-->
-              <h3 style="color: black;" class="salam">اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَا تُهُ</h3>
-              <!-- <h3>31 Desember 2023</h3> -->
-              <p style="font-size: 12px; margin-top: 10px;">Dengan segala hormat, kami mengundang Bapak/Ibu/Saudara/i, untuk hadir pada acara penikahan kami.</p>
-            </div>
-          </div>
-          <!-- <hr class="hr-xs mt-0" align="center" style="padding-bottom: 15px;"> -->
-          <div class="couple-wrap">
-            <div class="couple-half" style="margin-top: 30px; margin-bottom: 20px;">
-              <div class="groom">
-                <img src="{{ url_for ('static', filename='images/couple-wanita.png') }}" alt="groom" class="img-responsive" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
-              </div>
-              <div class="desc-groom animate-box">
-                <h3 style="color: rgb(45, 94, 156);">Restian Hanifia</h3>
-                <p>Putri dari Bpk. Suyatno & <br>Ibu Mulyawati </p>
-                <p>"Menyempurnakan separuh agama Islam & melaksanakan sunnah Rasulullah SAW dengan Menikah."</p>
               </div>
             </div>
-            <div class="text-center" style="margin: 0 auto;">
-              <i class="fa fa-heart animate-box" style="text-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; border-radius: 25%; padding: 0px; color: rgb(45, 94, 156); font-size: 30px;"></i>
-            </div>
-            <div class="couple-half" style="margin-top: 40px;">
-              <div class="bride">
-                <img src="{{ url_for ('static', filename='images/couple-pria.png') }}" alt="groom" class="img-responsive" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+            <!-- SAVE THE DATE -->
+            <div class="container" style="min-height:107dvh; 
+              width:100%; 
+              margin:0; 
+              padding:0;
+              background-image: url('/static/images/save2.png'); 
+              background-position: center; 
+              background-repeat: no-repeat; 
+              background-size: cover;">
+              <!-- Div paling atas: The Wedding Of -->
+              <div class="text-center animate-box">
+                <div style="margin-top: 60px;"></div>
+                <span style="color: white !important; font-size: 15px !important; 
+                  font-weight: bold; font-family: 'Clambake October Six', sans-serif !important;"> The Wedding Of </span>
+                <h1 style="font-family: 'Sacramento', Arial, serif; 
+                  color: white !important; font-size: 50px !important;"> Restian &amp; Ihyak </h1>
               </div>
-              <div class="desc-bride animate-box">
-                <h3 style="color: rgb(45, 94, 156);">Moh.Ihyak Hafid A.P</h3>
-                <p>Putra dari Bpk. Sukirno & <br>Ibu Mustakilah </p>
-                <p>"Aku memilihmu karena aku yakin kita akan sama-sama menjalani ibadah terlama ini sampai surga-Nya ALLAH SWT."</p>
+              <div id="weddings"></div>
+              <!-- Konten utama -->
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" style="margin-top: 250px;">
+                  <p style="font-family: 'Clambake October Six', sans-serif; 
+                    color: white; font-size: 12px;"> Kami berharap Anda <br> menjadi bagian dari hari istimewa kami </p>
+                  <span class="simply-countdown animate-box"></span>
+                  <p style="padding-top: 10px; color: white !important; font-size: 20px !important; 
+                    font-family: 'Clambake October Six', sans-serif;">31 Desember 2023</p>
+                  <br>
+                  <a class="animate-box" href="#eventdate" id="savedate"> Save the Date</a>
+                </div>
               </div>
             </div>
-          </div>
-      </div>
-      <div id="fh5co-event" class="fh5co-bg" style="height: 100%;">
-        <div class="container" id="eventdate" style="height: 820px;">
-          <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-              <!-- <span>Our Special Events</span> -->
-              <h2 style="color: rgb(45, 94, 156);">Save The Date</h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-              <div class="col-md-6 col-sm-6 text-center text-dark">
-                <div class="event-wrap animate-box">
-                  <h3 style="color: black;">Akad Nikah</h3>
-                  <div class="event-col">
-                    <span style="color: black;font-size: 17px !important">
-                      <i style="color: black;font-size:  17px !important" class="icon-clock"></i> 7.30 WIB - Selesai </span>
-                    <!-- <span style="color: black;"></span> -->
-                    <span style="color: black;font-size:  17px !important">
-                      <i style="color: black;font-size:  17px !important" class="icon-calendar"></i> Minggu, 31 Desember 2023 </span>
-                    <span style="color: black;font-size:  17px !important">
-                      <i style="color: black;font-size:  17px !important" class="icon-home"></i> RM Pendopo Andaru, Jl. Lawu, Kramat, Nganjuk </span>
+
+            <div id="fh5co-couple" style="min-height:102dvh;
+              display:flex; flex-direction:column; 
+              align-items:center; padding:40px 0; position:relative;">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+                  <!--<h2 style="color: rgb(45, 94, 156);">Kami Yang Berbahagia</h2>-->
+                  <h3 style="color: black;" class="salam">اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَا تُهُ</h3>
+                  <!-- <h3>31 Desember 2023</h3> -->
+                  <p style="font-size: 12px; margin-top: 10px;">Dengan segala hormat, kami mengundang Bapak/Ibu/Saudara/i, untuk hadir pada acara penikahan kami.</p>
+                </div>
+              </div>
+
+              <div class="couple-wrap">
+                <div class="couple-half" style="margin-top: 30px; margin-bottom: 20px;">
+                  <div class="groom">
+                    <img src="{{ url_for ('static', filename='images/couple-wanita.png') }}" alt="groom" class="img-responsive" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+                  </div>
+                  <div class="desc-groom animate-box">
+                    <h3 style="color: rgb(45, 94, 156);">Restian Hanifia</h3>
+                    <p>Putri dari Bpk. Suyatno & <br>Ibu Mulyawati </p>
+                    <p>"Menyempurnakan separuh agama Islam & melaksanakan sunnah Rasulullah SAW dengan Menikah."</p>
                   </div>
                 </div>
-              </div>
-              <div class="col-md-6 col-sm-6 text-center">
-                <div class="event-wrap animate-box">
-                  <h3 style="color: black;">Resepsi Penikahan</h3>
-                  <div class="event-col">
-                    <span style="color: black; font-size:  17px !important;">
-                      <i style="color: black; font-size:  17px !important;" class="icon-clock"></i> 11.30 - 13.30 WIB </span>
-                    <!-- <span style="color: black;">13.30 WIB</span> -->
-                    <span style="color: black; font-size:  17px !important;">
-                      <i style="color: black; font-size:  17px !important;" class="icon-calendar"></i> Minggu, 31 Desember 2023 </span>
-                    <span style="color: black;font-size:  17px !important">
-                      <i style="color: black;font-size:  17px !important" class="icon-home"></i> RM Pendopo Andaru, Jl. Lawu, Kramat, Nganjuk </span>
+                <div class="text-center" style="margin: 0 auto;">
+                  <i class="fa fa-heart animate-box" style="text-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; border-radius: 25%; padding: 0px; color: rgb(45, 94, 156); font-size: 30px;"></i>
+                </div>
+                <div class="couple-half" style="margin-top: 40px;">
+                  <div class="bride">
+                    <img src="{{ url_for ('static', filename='images/couple-pria.png') }}" alt="groom" class="img-responsive" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+                  </div>
+                  <div class="desc-bride animate-box">
+                    <h3 style="color: rgb(45, 94, 156);">Moh.Ihyak Hafid A.P</h3>
+                    <p>Putra dari Bpk. Sukirno & <br>Ibu Mustakilah </p>
+                    <p>"Aku memilihmu karena aku yakin kita akan sama-sama menjalani ibadah terlama ini sampai surga-Nya ALLAH SWT."</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-10 text-center">
-              <div class="col-md-10 animate-box" style="padding: 15px;">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.6527746263414!2d111.91036377413519!3d-7.612709375254744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e784ba2450b9c8f%3A0x7c35c8364bb66f7c!2sRM%20Pendopo%20Andaru!5e0!3m2!1sid!2ssg!4v1701392291610!5m2!1sid!2ssg" width="100%" height="300px" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; border-radius: 15px; margin-top: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-              <div style="margin-top: 10px;">
-                <a href="https://maps.app.goo.gl/y9qW5NLnBFxw4cQy5" target="_blank" id="lok" class="" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; font-family: 'Clambake October Six', sans-serif;">
-                  <i class="fa fa-map-marker"></i>&nbsp;&nbsp;Lihat Lokasi </a>
+
+            <!-- EVENT WEDDING -->
+            <div id="fh5co-event" class="fh5co-bg" style="min-height:102dvh;
+              display:flex; flex-direction:column; 
+              align-items:center; padding:40px 0; position:relative;">
+              <div class="container" id="eventdate" style="">
+                <div class="row">
+                  <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+                    <!-- <span>Our Special Events</span> -->
+                    <h2 style="color: rgb(45, 94, 156);">Acara Pernikahan</h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="col-md-6 col-sm-6 text-center text-dark">
+                      <div class="event-wrap animate-box">
+                        <h3 style="color: black;">Akad Nikah</h3>
+                        <div class="event-col">
+                          <span style="color: black;font-size: 17px !important">
+                            <i style="color: black;font-size:  17px !important" class="icon-clock"></i> 7.30 WIB - Selesai </span>
+                          <!-- <span style="color: black;"></span> -->
+                          <span style="color: black;font-size:  17px !important">
+                            <i style="color: black;font-size:  17px !important" class="icon-calendar"></i> Minggu, 31 Desember 2023 </span>
+                          <span style="color: black;font-size:  17px !important">
+                            <i style="color: black;font-size:  17px !important" class="icon-home"></i> RM Pendopo Andaru, Jl. Lawu, Kramat, Nganjuk </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 text-center">
+                      <div class="event-wrap animate-box">
+                        <h3 style="color: black;">Resepsi Penikahan</h3>
+                        <div class="event-col">
+                          <span style="color: black; font-size:  17px !important;">
+                            <i style="color: black; font-size:  17px !important;" class="icon-clock"></i> 11.30 - 13.30 WIB </span>
+                          <!-- <span style="color: black;">13.30 WIB</span> -->
+                          <span style="color: black; font-size:  17px !important;">
+                            <i style="color: black; font-size:  17px !important;" class="icon-calendar"></i> Minggu, 31 Desember 2023 </span>
+                          <span style="color: black;font-size:  17px !important">
+                            <i style="color: black;font-size:  17px !important" class="icon-home"></i> RM Pendopo Andaru, Jl. Lawu, Kramat, Nganjuk </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-10 text-center">
+                    <div class="col-md-10 animate-box" style="padding: 15px;">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.6527746263414!2d111.91036377413519!3d-7.612709375254744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e784ba2450b9c8f%3A0x7c35c8364bb66f7c!2sRM%20Pendopo%20Andaru!5e0!3m2!1sid!2ssg!4v1701392291610!5m2!1sid!2ssg" width="100%" height="300px" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; border-radius: 15px; margin-top: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div style="margin-top: 10px;">
+                      <a href="https://maps.app.goo.gl/y9qW5NLnBFxw4cQy5" target="_blank" id="lok" class="" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; font-family: 'Clambake October Six', sans-serif;">
+                        <i class="fa fa-map-marker"></i>&nbsp;&nbsp;Lihat Lokasi </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+
+            <!-- CERITA CINTA -->
+            <div id="fh5co-couple-story" style="background-image: url('/static/images/bg-utama.jpeg'); background-position: center; 
+              background-size: cover; background-repeat: no-repeat;">
+              <div class="container">
+                <div class="row" style="padding-top: 100px;">
+                  <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+                    <h2 style="color: rgb(45, 94, 156);">Our Love Story</h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 col-md-offset-0">
+                    <ul class="timeline animate-box">
+                      <li class="animate-box">
+                        <div class="timeline-badge" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; background-image:url('/static/images/cerita/pertamaketemu.jpg');"></div>
+                        <div class="timeline-panel" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
+                          <div class="timeline-heading">
+                            <h3 class="timeline-title">Pertama Bertemu</h3>
+                            <span class="date">Agustus 2022</span>
+                          </div>
+                          <div class="timeline-body">
+                            <p>Bulan Agustus 2022 saat saya cuti kerja dari Papua, setelah beberapa tahun tidak berjumpa sejak SMA , atas izin dan ridho Allah kita dipertemukan pada kesempatan yang baik di Kota Jakarta dan dari situlah awal mula benih-benih perasaan kita mulai muncul.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="timeline-inverted animate-box">
+                        <div class="timeline-badge" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; background-image:url('/static/images/cerita/mulaiserius.jpg');"></div>
+                        <div class="timeline-panel" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
+                          <div class="timeline-heading">
+                            <h3 class="timeline-title">Mulai Serius</h3>
+                            <span class="date"> Oktober 2022</span>
+                          </div>
+                          <div class="timeline-body">
+                            <p>Bulan Oktober 2022 disaat saya masih cuti dan kamu memutuskan untuk pulang ke Nganjuk mengambil WFH ,saya kaget dan tidak menyangka kamu mengajak aku ke rumah kamu untuk kamu kenalkan kepada kedua orang tua mu. Dan Alhamdulillah dari situ lah awal restu orang tua kita terhadap hubungan kita.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="animate-box">
+                        <div class="timeline-badge" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; background-image:url('/static/images/cerita/lebihserius.jpg');"></div>
+                        <div class="timeline-panel" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
+                          <div class="timeline-heading">
+                            <h3 class="timeline-title">Lebih Serius</h3>
+                            <span class="date"> Desember 2022</span>
+                          </div>
+                          <div class="timeline-body">
+                            <p>Bulan Desember 2022 saya Kembali bekerja di perantauan masing-masing dan kita sudah berkomitmen untuk menjalani hubungan ini sampai ke jenjang yang lebih serius yakni jenjang pernikahan.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="timeline-inverted animate-box">
+                        <div class="timeline-badge" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; background-image:url('/static/images/cerita/pertemuankeluarga-1.jpg');"></div>
+                        <div class="timeline-panel" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
+                          <div class="timeline-heading">
+                            <h3 class="timeline-title">Pertemuan Keluarga</h3>
+                            <span class="date"> April 2023</span>
+                          </div>
+                          <div class="timeline-body">
+                            <p>Bulan April 2023 saat saya mendapat cuti dan pulang ke Nganjuk saat bulan Ramadhan ( Buka Bersama ) disitulah pertama kali kedua keluarga kita bertemu untuk silaturahim dan menentukan tanggal tunangan kita.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="animate-box">
+                        <div class="timeline-badge" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; background-image:url('/static/images/cerita/tunangan.jpg');"></div>
+                        <div class="timeline-panel" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
+                          <div class="timeline-heading">
+                            <h3 class="timeline-title">Tunangan</h3>
+                            <span class="date"> Agustus 2023</span>
+                          </div>
+                          <div class="timeline-body">
+                            <p>Bulan Agustus 2023 tepatnya tanggal 20 kita melangsungkan acara Tunangan untuk mengikat hubungan kita kearah yang lebih baik dan serius yaitu Pernikahan. Di bulan Agustus itu pula kita Bersama keluarga besar menentukan Hari Pernikahan di tanggal 31 Desember 2023.</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wedding Gift Section -->
+            <div id="fh5co-gift" style="background-image:url('/static/images/bg-utama.jpeg'); background-size: cover; background-position:center; padding: 60px 0;">
+              <div class="container text-center">
+                <h2 style="color: rgb(45, 94, 156);">Wedding Gift</h2>
+                <p style="font-size: 12px; margin-bottom: 25px;"> Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun apabila memberi adalah bentuk tanda kasih, Anda dapat memberikan hadiah secara digital melalui rekening berikut: </p>
+                <div style="background:white; padding:20px; border-radius:15px; width:90%; margin:auto; box-shadow: rgba(0,0,0,0.16) 0px 3px 6px, rgba(0,0,0,0.23) 0px 3px 6px;">
+                  <h4 style="margin-bottom: 5px;">BANK BCA</h4>
+                  <p id="textToCopy" style="margin:0; font-weight:bold;">123456789 - Restian Hanifia</p>
+                  <button id="copyBtn" style="margin-top:10px; padding:8px 15px; border-radius:8px; background-color:rgb(1,130,216); color:white; border:none;">Salin Rekening</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ucapan Tamu Undangan Section -->
+            <div id="fh5co-rsvp" style="padding: 60px 0; background:#f9f9f9;">
+              <div class="container">
+                <div class="row text-center">
+                  <h2 style="color: rgb(45, 94, 156);">Ucapan & Doa</h2>
+                  <p style="font-size: 12px;">Berikan ucapan dan doa terbaik Anda untuk kami.</p>
+                </div>
+                <form id="my-form" action="/submit-form" method="POST" style="margin-top:20px;">
+                  <div class="form-group">
+                    <label>Nama</label>
+                    <input type="text" class="form-control" id="nama" name="nama" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Ucapan</label>
+                    <textarea class="form-control" name="ucapan" rows="4" required></textarea>
+                  </div>
+                  <button type="submit" style="margin-top:10px; padding:10px 15px; border-radius:8px; background-color:rgb(1,130,216); color:white; border:none;">Kirim Ucapan</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Penutup Section -->
+            <div id="fh5co-end" style="background-image:url('/static/images/bg.jpg'); background-size: cover; background-position:center; padding: 80px 0; color:white; text-align:center;">
+              <h2 style="font-family:'Sacramento', serif; font-size:50px;">Terima Kasih</h2>
+              <p style="font-size: 14px; margin-top:10px;"> Merupakan sebuah kehormatan dan kebahagiaan bagi kami apabila Anda berkenan hadir memberikan doa restu. <br>Wassalamu'alaikum Warahmatullahi Wabarakatuh. </p>
+            </div>
+
+          </header>
+          <!-- ===================== NAVBAR BAWAH (awalnya disembunyikan) ===================== -->
+          <nav id="bottomNav" class="fixed-bottom navbar mb-4" style="display: none; box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; 
+            background-color: white; width: 50%;">
+            <a class="nav-link sosmed" href="#homewedding" style="background-color: rgb(1, 130, 216); border-radius: 5px; padding: 7px 8px 6px 8px;">
+              <i class="fa fa-home" style="color: white; font-size: 23px; padding-bottom: 2px;"></i>
+            </a>
+            <a class="nav-link sosmed" href="#couplewedding" style="background-color: rgb(1, 130, 216); border-radius: 5px; padding: 7px 8px 6px 8px;">
+              <i class="fa fa-heart" style="color: white; font-size: 21px; padding-bottom: 2px;"></i>
+            </a>
+            <a class="nav-link sosmed" href="#rsvpwedding" style="background-color: rgb(1, 130, 216); border-radius: 5px; padding: 7px 8px 6px 8px;">
+              <i class="fa fa-commenting" style="color: white; font-size: 21px; padding-bottom: 3px;"></i>
+            </a>
+            <a class="nav-link sosmed" href="#eventdate" style="background-color: rgb(1, 130, 216); border-radius: 5px; padding: 7px 8px 6px 8px;">
+              <i class="fa fa-calendar" style="color: white; font-size: 21px; padding-bottom: 3px;"></i>
+            </a>
+          </nav>
+
+          
+
+          
         </div>
-      </div>
-      <!-- <div id="fh5co-services" class="fh5co-section-gray"><div class="container"></div></div> -->
-      <div id="fh5co-couple-story" style="background-image: url('/static/images/bg-utama.jpeg'); background-position: center; background-size: cover; background-repeat: no-repeat;">
-        <div class="container">
-          <div class="row" style="padding-top: 30px;">
-            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-              <h2 style="color: rgb(45, 94, 156);">Our Story</h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 col-md-offset-0">
-              <ul class="timeline animate-box">
-                <li class="animate-box">
-                  <div class="timeline-badge" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; background-image:url('/static/images/cerita/pertamaketemu.jpg');"></div>
-                  <div class="timeline-panel" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
-                    <div class="timeline-heading">
-                      <h3 class="timeline-title">Pertama Bertemu</h3>
-                      <span class="date">Agustus 2022</span>
-                    </div>
-                    <div class="timeline-body">
-                      <p>Bulan Agustus 2022 saat saya cuti kerja dari Papua, setelah beberapa tahun tidak berjumpa sejak SMA , atas izin dan ridho Allah kita dipertemukan pada kesempatan yang baik di Kota Jakarta dan dari situlah awal mula benih-benih perasaan kita mulai muncul.</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="timeline-inverted animate-box">
-                  <div class="timeline-badge" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; background-image:url('/static/images/cerita/mulaiserius.jpg');"></div>
-                  <div class="timeline-panel" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
-                    <div class="timeline-heading">
-                      <h3 class="timeline-title">Mulai Serius</h3>
-                      <span class="date"> Oktober 2022</span>
-                    </div>
-                    <div class="timeline-body">
-                      <p>Bulan Oktober 2022 disaat saya masih cuti dan kamu memutuskan untuk pulang ke Nganjuk mengambil WFH ,saya kaget dan tidak menyangka kamu mengajak aku ke rumah kamu untuk kamu kenalkan kepada kedua orang tua mu. Dan Alhamdulillah dari situ lah awal restu orang tua kita terhadap hubungan kita.</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="animate-box">
-                  <div class="timeline-badge" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; background-image:url('/static/images/cerita/lebihserius.jpg');"></div>
-                  <div class="timeline-panel" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
-                    <div class="timeline-heading">
-                      <h3 class="timeline-title">Lebih Serius</h3>
-                      <span class="date"> Desember 2022</span>
-                    </div>
-                    <div class="timeline-body">
-                      <p>Bulan Desember 2022 saya Kembali bekerja di perantauan masing-masing dan kita sudah berkomitmen untuk menjalani hubungan ini sampai ke jenjang yang lebih serius yakni jenjang pernikahan.</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="timeline-inverted animate-box">
-                  <div class="timeline-badge" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; background-image:url('/static/images/cerita/pertemuankeluarga-1.jpg');"></div>
-                  <div class="timeline-panel" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
-                    <div class="timeline-heading">
-                      <h3 class="timeline-title">Pertemuan Keluarga</h3>
-                      <span class="date"> April 2023</span>
-                    </div>
-                    <div class="timeline-body">
-                      <p>Bulan April 2023 saat saya mendapat cuti dan pulang ke Nganjuk saat bulan Ramadhan ( Buka Bersama ) disitulah pertama kali kedua keluarga kita bertemu untuk silaturahim dan menentukan tanggal tunangan kita.</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="animate-box">
-                  <div class="timeline-badge" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; background-image:url('/static/images/cerita/tunangan.jpg');"></div>
-                  <div class="timeline-panel" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
-                    <div class="timeline-heading">
-                      <h3 class="timeline-title">Tunangan</h3>
-                      <span class="date"> Agustus 2023</span>
-                    </div>
-                    <div class="timeline-body">
-                      <p>Bulan Agustus 2023 tepatnya tanggal 20 kita melangsungkan acara Tunangan untuk mengikat hubungan kita kearah yang lebih baik dan serius yaitu Pernikahan. Di bulan Agustus itu pula kita Bersama keluarga besar menentukan Hari Pernikahan di tanggal 31 Desember 2023.</p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+
+        <!-- Kolom kanan -->
+        <div class="d-none d-md-block col-md-1 col-lg-2 col-xl-3" style="background-color: #ffffff;"></div>
       </div>
 
     <div class="gototop js-top">
@@ -345,14 +367,12 @@
         <i class="icon-arrow-up"></i>
       </a>
     </div>
-
     <div id="audio-container">
       <audio id="song" autoplay loop>
         <source src="{{ url_for('static', filename='song/song2.mp3') }}" type="audio/mp3">
       </audio>
       <div class="audio-icon-wrapper"></div>
     </div>
-
     <!-- jQuery -->
     <script src="{{ url_for ('static', filename='js/jquery.min.js') }}"></script>
     <!-- jQuery Easing -->
@@ -374,7 +394,6 @@
     <script src="{{ url_for ('static', filename='js/simplyCountdown.js') }}"></script>
     <!-- Main -->
     <script src="{{ url_for ('static', filename='js/main.js') }}"></script>
-
     <script>
       simplyCountdown('.simply-countdown', {
         year: 2023,
@@ -383,7 +402,6 @@
         seconds: 8,
       });
     </script>
-
     <script>
       window.addEventListener("load", function() {
         const form = document.getElementById('my-form');
@@ -406,8 +424,7 @@
         });
       });
     </script>
-
-	<!-- Nama Tamu -->
+    <!-- Nama Tamu -->
     <script>
       const urlParams = new URLSearchParams(window.location.search);
       const nama = urlParams.get('to', 'nama');
@@ -416,165 +433,64 @@
       namaContainer.innerText = nama;
       document.querySelector('#nama').value = nama;
     </script>
-
     <script>
       const rootElement = document.querySelector(":root");
 
       function disableScroll() {
-          window.onscroll = () => window.scrollTo(0, 0);
-          if (rootElement) rootElement.style.scrollBehavior = 'auto';
+        window.onscroll = () => window.scrollTo(0, 0);
+        if (rootElement) rootElement.style.scrollBehavior = 'auto';
       }
 
       function enableScroll() {
-          window.onscroll = null;
-          if (rootElement) rootElement.style.scrollBehavior = 'smooth';
-
-          playAudio();
-          showNavbar();
-
-          const target = document.getElementById('weddings');
-          if (target) {
-              smoothConstantScroll(target, 25); // kecepatan 2px per frame
-          }
+        window.onscroll = null;
+        if (rootElement) rootElement.style.scrollBehavior = 'smooth';
+        playAudio();
+        showNavbar();
+        const target = document.getElementById('weddings');
+        if (target) {
+          smoothConstantScroll(target, 25); // kecepatan 2px per frame
+        }
       }
 
       function smoothConstantScroll(element, pixelsPerFrame) {
-          const start = window.scrollY;
-          const end = element.getBoundingClientRect().top + start;
-          const distance = end - start;
-          const direction = distance > 0 ? 1 : -1;
+        const start = window.scrollY;
+        const end = element.getBoundingClientRect().top + start;
+        const distance = end - start;
+        const direction = distance > 0 ? 1 : -1;
 
-          function step() {
-              const current = window.scrollY;
-              if ((direction > 0 && current < end) || (direction < 0 && current > end)) {
-                  window.scrollBy(0, direction * pixelsPerFrame);
-                  requestAnimationFrame(step);
-              } else {
-                  // pastikan posisi tepat di target
-                  window.scrollTo(0, end);
-              }
+        function step() {
+          const current = window.scrollY;
+          if ((direction > 0 && current < end) || (direction < 0 && current > end)) {
+            window.scrollBy(0, direction * pixelsPerFrame);
+            requestAnimationFrame(step);
+          } else {
+            // pastikan posisi tepat di target
+            window.scrollTo(0, end);
           }
-
-          requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
       }
 
       function playAudio() {
-          const song = document.querySelector('#song');
-          if (song) {
-              song.volume = 0.6;
-              song.play().catch(err => console.warn("Audio gagal diputar:", err));
-          }
+        const song = document.querySelector('#song');
+        if (song) {
+          song.volume = 0.6;
+          song.play().catch(err => console.warn("Audio gagal diputar:", err));
+        }
       }
 
       function showNavbar() {
-          const navbar = document.getElementById("bottomNav");
-          if (navbar) {
-              navbar.style.display = "flex";
-              navbar.style.opacity = 0;
-              navbar.style.transition = "opacity 0.8s ease";
-              requestAnimationFrame(() => {
-                  navbar.style.opacity = 1;
-              });
-          }
+        const navbar = document.getElementById("bottomNav");
+        if (navbar) {
+          navbar.style.display = "flex";
+          navbar.style.opacity = 0;
+          navbar.style.transition = "opacity 0.8s ease";
+          requestAnimationFrame(() => {
+            navbar.style.opacity = 1;
+          });
+        }
       }
-
       disableScroll();
     </script>
-
-    <!-- GALLERY -->
-    <!-- <script>
-      let slideIndex = 0;
-      showSlides();
-      // Next-previous control
-      function nextSlide() {
-        slideIndex++;
-        showSlides();
-        timer = _timer; // reset timer
-      }
-
-      function prevSlide() {
-        slideIndex--;
-        showSlides();
-        timer = _timer;
-      }
-      // Thumbnail image controlls
-      function currentSlide(n) {
-        slideIndex = n - 1;
-        showSlides();
-        timer = _timer;
-      }
-
-      function showSlides() {
-        let slides = document.querySelectorAll(".mySlides");
-        let dots = document.querySelectorAll(".dots");
-        if (slideIndex > slides.length - 1) slideIndex = 0;
-        if (slideIndex < 0) slideIndex = slides.length - 1;
-        // hide all slides
-        slides.forEach((slide) => {
-          slide.style.display = "none";
-        });
-        // show one slide base on index number
-        slides[slideIndex].style.display = "block";
-        dots.forEach((dot) => {
-          dot.classList.remove("active");
-        });
-        dots[slideIndex].classList.add("active");
-      }
-      // autoplay slides --------
-      let timer = 7; // sec
-      const _timer = timer;
-      // this function runs every 1 second
-      setInterval(() => {
-        timer--;
-        if (timer < 1) {
-          nextSlide();
-          timer = _timer; // reset timer
-        }
-      }, 1000); // 1sec
-    </script> -->
-
-    <!-- tombol copy -->
-    <!-- <script>
-      const copyBtn = document.getElementById('copyBtn');
-      const textToCopy = document.getElementById('textToCopy');
-      copyBtn.addEventListener('click', () => {
-        navigator.clipboard.writeText(textToCopy.innerText).then(() => {
-          // alert('Copied to clipboard!');
-          Swal.fire("Berhasil Tersalin!");
-        }).catch(() => {
-          // alert('Error copying text!');
-          Swal.fire("Gagal Tersalin!");
-        });
-      });
-    </script> -->
-
-    <!-- <script>
-      const copyBtn2 = document.getElementById('copyBtn2');
-      const textToCopy2 = document.getElementById('textToCopy2');
-      copyBtn2.addEventListener('click', () => {
-        navigator.clipboard.writeText(textToCopy2.innerText).then(() => {
-          // alert('Copied to clipboard!');
-          Swal.fire("Berhasil Tersalin!");
-        }).catch(() => {
-          // alert('Error copying text!');
-          Swal.fire("Gagal Tersalin!");
-        });
-      });
-    </script> -->
-
-    <!-- <script>
-      const copyBtn3 = document.getElementById('copyBtn3');
-      const textToCopy3 = document.getElementById('textToCopy3');
-      copyBtn3.addEventListener('click', () => {
-        navigator.clipboard.writeText(textToCopy3.innerText).then(() => {
-          // alert('Copied to clipboard!');
-          Swal.fire("Berhasil Tersalin!");
-        }).catch(() => {
-          // alert('Error copying text!');
-          Swal.fire("Gagal Tersalin!");
-        });
-      });
-    </script> -->
-
   </body>
 </html>
