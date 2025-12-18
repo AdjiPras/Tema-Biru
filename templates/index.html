@@ -54,6 +54,50 @@
     <!-- alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.1/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.1/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <style>
+    #fh5co-event .event-wrap h3,
+    #fh5co-event .event-wrap span,
+    #fh5co-event .event-wrap i {
+      color: #1f1f1f !important;
+    }
+
+    /* AUDIO */
+    .audio-btn {
+        position: fixed;
+        bottom: 70px;
+        right: 20px;
+        background: radial-gradient(circle at center, #53a9d1 0%, #2e6bbb 70%);
+        color: #fff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: rgb(6, 6, 7) 0px 5px 10px -3px;
+        transition: background 0.3s ease;
+        z-index: 9999;
+        outline: none !important;
+      }
+
+      .audio-btn:hover {
+        background: #2e6bbb;
+        outline: none !important;
+      }
+
+      /* POSISI TETAP DI BAWAH KANAN */
+      #audio-container,
+      .gototop {
+        position: fixed;
+        right: 20px;
+        z-index: 9999;
+      }
+
+    </style>
+
   </head>
   <body>
     <div class="row g-0">
@@ -84,8 +128,17 @@
                         <span style="color: white !important; font-size: 25px !important; color: #ffffff; font-family: 'Clambake October Six', sans-serif;"></span>
                       </h4>
                       <br>
-                      <a class="animate-box" href="#weddings" id="buka" onclick="enableScroll()" style="font-size: 17px;">
-                        <i class="fa fa-envelope-open"></i>&nbsp;&nbsp;Buka Undangan </a>
+                      <!-- <a class="animate-box" href="#weddings" id="buka" 
+                      onclick="enableScroll()" style="font-size: 17px;">
+                        <i class="fa fa-envelope-open"></i>
+                        &nbsp;&nbsp;Buka Undangan 
+                      </a> -->
+                      <a class="wow fadeInDown" data-wow-delay="0.5s" href="#weddings" id="open"
+                        style="font-family: 'Clambake October Six', sans-serif;
+                          box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;"
+                        onclick="openInvitation()">
+                        <i class="fa fa-envelope-open"></i>&nbsp;&nbsp;BUKA UNDANGAN
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -104,12 +157,12 @@
               <!-- Div paling atas: The Wedding Of -->
               <div class="text-center animate-box">
                 <div style="margin-top: 60px;"></div>
-                <span style="color: white !important; font-size: 17px !important; 
+                <span id="weddings" style="color: white !important; font-size: 17px !important; 
                   font-weight: bold; font-family: 'Clambake October Six', sans-serif !important;"> The Wedding Of </span>
                 <h1 style="font-family: 'Sacramento', Arial, serif; 
                   color: white !important; font-size: 50px !important;"> Restian &amp; Ihyak </h1>
               </div>
-              <div id="weddings"></div>
+              
               <!-- Konten utama -->
               <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" style="margin-top: 250px;">
@@ -119,109 +172,208 @@
                   <p style="padding-top: 10px; color: white !important; font-size: 20px !important; 
                     font-family: 'Clambake October Six', sans-serif;">31 Desember 2023</p>
                   <br>
-                  <a class="animate-box" href="#" id="savedate" style="font-size: 17px;"> 
-                    <i class="fa fa-calendar"></i>&nbsp;&nbsp;ADD TO CALENDAR</a>
+                  <a id="calendar" class="wow fadeInDown" data-wow-delay="0.5s"
+                    href="#"
+                    target="_blank"
+                    style="font-weight: bold; position:relative; z-index:3; font-family: 'Clambake October Six', sans-serif; 
+                    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; margin-top: 20px; margin-bottom: 30px; color:#fff;">
+                    <i class="fa fa-calendar"></i>&nbsp;&nbsp; ADD TO CALENDAR
+                  </a>
                 </div>
               </div>
             </div>
 
             <!-- MEMPELAI -->
-            <div id="fh5co-couple" style="min-height:102dvh;
-              display:flex; flex-direction:column; 
-              align-items:center; padding:40px 0; position:relative;">
-              <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                  <!--<h2 style="color: rgb(45, 94, 156);">Kami Yang Berbahagia</h2>-->
-                  <h3 style="color: black;" class="salam">اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَا تُهُ</h3>
-                  <!-- <h3>31 Desember 2023</h3> -->
-                  <p style="font-size: 17px; margin-top: 10px;">Dengan segala hormat, kami mengundang Bapak/Ibu/Saudara/i, untuk hadir pada acara penikahan kami.</p>
-                </div>
-              </div>
+            <div id="fh5co-couple"
+                style="min-height:102dvh;
+                        display:flex;
+                        justify-content:center;
+                        padding:40px 0;
+                        position:relative;">
 
-              <div class="couple-wrap">
-                <div class="couple-half" style="margin-top: 30px; margin-bottom: 20px;">
-                  <div class="groom">
-                    <img src="{{ url_for ('static', filename='images/couple-wanita.png') }}" alt="groom" class="img-responsive" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
-                  </div>
-                  <div class="desc-groom animate-box">
-                    <h3 style="color: rgb(45, 94, 156); font-weight: bold; font-size: 40px !important;">Restian Hanifia</h3>
-                    <p style="font-size: 17px; font-weight: 500;">Putri dari Bpk. Suyatno & <br>Ibu Mulyawati </p>
-                    <p style="font-size: 15px; width: 350px; margin: 0 auto;">"Menyempurnakan separuh agama Islam & melaksanakan sunnah Rasulullah SAW dengan Menikah."</p>
+              <!-- WRAPPER TENGAH -->
+              <div class="couple-wrapper"
+                  style="width:90%;
+                          max-width:1000px;
+                          display:flex;
+                          flex-direction:column;
+                          align-items:center;">
+
+                <!-- JUDUL / SALAM -->
+                <div class="row">
+                  <div class="col-md-12 text-center fh5co-heading animate-box">
+                    <h3 style="color:black;" class="salam">
+                      اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَا تُهُ
+                    </h3>
+                    <p style="font-size:17px; margin-top:10px;">
+                      Dengan segala hormat, kami mengundang Bapak/Ibu/Saudara/i,
+                      untuk hadir pada acara penikahan kami.
+                    </p>
                   </div>
                 </div>
-                <div class="text-center" style="margin: 0 auto;">
-                  <i class="fa fa-heart animate-box" style="text-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; border-radius: 25%; padding: 0px; color: rgb(45, 94, 156); font-size: 30px;"></i>
-                </div>
-                <div class="couple-half" style="margin-top: 40px;">
-                  <div class="bride">
-                    <img src="{{ url_for ('static', filename='images/couple-pria.png') }}" alt="groom" class="img-responsive" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+
+                <!-- MEMPELAI (STACK ATAS - BAWAH) -->
+                <div class="couple-wrap"
+                    style="width:100%;
+                            display:flex;
+                            flex-direction:column;
+                            align-items:center;">
+
+                  <!-- MEMPELAI WANITA -->
+                  <div class="couple-half text-center animate-box"
+                      style="margin-top:30px;
+                              margin-bottom:30px;
+                              width:100%;">
+
+                    <img src="{{ url_for('static', filename='images/couple-wanita.png') }}"
+                        class="img-responsive"
+                        style="margin:0 auto;
+                                box-shadow:rgba(0,0,0,0.25) 0px 54px 55px,
+                                          rgba(0,0,0,0.12) 0px -12px 30px,
+                                          rgba(0,0,0,0.12) 0px 4px 6px,
+                                          rgba(0,0,0,0.17) 0px 12px 13px,
+                                          rgba(0,0,0,0.09) 0px -3px 5px;">
+
+                    <h3 style="color:rgb(45,94,156); font-weight:bold; font-size:40px; margin-top:20px;">
+                      Restian Hanifia
+                    </h3>
+                    <p style="font-size:17px; font-weight:500;">
+                      Putri dari Bpk. Suyatno &<br>Ibu Mulyawati
+                    </p>
+                    <p style="font-size:15px; max-width:350px; margin:0 auto;">
+                      "Menyempurnakan separuh agama Islam & melaksanakan sunnah
+                      Rasulullah SAW dengan Menikah."
+                    </p>
                   </div>
-                  <div class="desc-bride animate-box">
-                    <h3 style="color: rgb(45, 94, 156); font-weight: bold; font-size: 40px !important;">Moh.Ihyak Hafid A.P</h3>
-                    <p style="font-size: 17px; font-weight: 500;">Putra dari Bpk. Sukirno & <br>Ibu Mustakilah </p>
-                    <p style="font-size: 15px; width: 350px; margin: 0 auto;">"Aku memilihmu karena aku yakin kita akan sama-sama menjalani ibadah terlama ini sampai surga-Nya ALLAH SWT."</p>
+
+                  <!-- ICON HATI -->
+                  <div class="text-center animate-box" style="margin:10px 0 30px;">
+                    <i class="fa fa-heart"
+                      style="color:rgb(45,94,156);
+                              font-size:30px;
+                              text-shadow:rgba(0,0,0,0.16) 0px 3px 6px,
+                                          rgba(0,0,0,0.23) 0px 3px 6px;">
+                    </i>
                   </div>
+
+                  <!-- MEMPELAI PRIA -->
+                  <div class="couple-half text-center animate-box"
+                      style="margin-bottom:20px;
+                              width:100%;">
+
+                    <img src="{{ url_for('static', filename='images/couple-pria.png') }}"
+                        class="img-responsive"
+                        style="margin:0 auto;
+                                box-shadow:rgba(0,0,0,0.25) 0px 54px 55px,
+                                          rgba(0,0,0,0.12) 0px -12px 30px,
+                                          rgba(0,0,0,0.12) 0px 4px 6px,
+                                          rgba(0,0,0,0.17) 0px 12px 13px,
+                                          rgba(0,0,0,0.09) 0px -3px 5px;">
+
+                    <h3 style="color:rgb(45,94,156); font-weight:bold; font-size:40px; margin-top:20px;">
+                      Moh. Ihyak Hafid A.P
+                    </h3>
+                    <p style="font-size:17px; font-weight:500;">
+                      Putra dari Bpk. Sukirno &<br>Ibu Mustakilah
+                    </p>
+                    <p style="font-size:15px; max-width:350px; margin:0 auto;">
+                      "Aku memilihmu karena aku yakin kita akan sama-sama menjalani
+                      ibadah terlama ini sampai surga-Nya ALLAH SWT."
+                    </p>
+                  </div>
+
                 </div>
               </div>
             </div>
 
             <!-- EVENT WEDDING -->
-            <div id="fh5co-event" class="fh5co-bg" style="min-height:102dvh;
-              display:flex; flex-direction:column; 
-              align-items:center; padding:40px 0; position:relative;">
-              <div class="container" id="eventdate" style="">
-                <div class="row">
-                  <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                    <!-- <span>Our Special Events</span> -->
-                    <h2 style="color: rgb(45, 94, 156);">Acara Pernikahan</h2>
+            <div id="fh5co-event" class="fh5co-bg"
+                style="min-height:110dvh;
+                        display:flex;
+                        justify-content:center;
+                        padding:40px 0;
+                        position:relative;
+                        background-color: #fff;">
+
+              <!-- WRAPPER TENGAH -->
+              <div class="event-wrapper"
+                  style="width:90%;
+                          max-width:1000px;
+                          display:flex;
+                          flex-direction:column;
+                          align-items:center;">
+
+                <div class="container-fluid" id="eventdate">
+
+                  <!-- JUDUL -->
+                  <div class="row">
+                    <div class="col-md-12 text-center fh5co-heading animate-box">
+                      <h2 style="color:rgb(45,94,156);">Acara <br> Pernikahan</h2>
+                    </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-10 col-md-offset-1">
-                    <div class="col-md-6 col-sm-6 text-center text-dark">
+
+                  <!-- AKAD & RESEPSI -->
+                  <div class="row text-center">
+
+                    <div class="col-md-6 col-sm-6">
                       <div class="event-wrap animate-box">
-                        <h3 style="color: black;">Akad Nikah</h3>
+                        <h3 style="color:black;">Akad Nikah</h3>
                         <div class="event-col">
-                          <span style="color: black;font-size: 17px !important">
-                            <i style="color: black;font-size:  17px !important" class="icon-clock"></i> 7.30 WIB - Selesai </span>
-                          <!-- <span style="color: black;"></span> -->
-                          <span style="color: black;font-size:  17px !important">
-                            <i style="color: black;font-size:  17px !important" class="icon-calendar"></i> Minggu, 31 Desember 2023 </span>
-                          <span style="color: black;font-size:  17px !important">
-                            <i style="color: black;font-size:  17px !important" class="icon-home"></i> RM Pendopo Andaru, Jl. Lawu, Kramat, Nganjuk </span>
+                          <span><i class="icon-clock"></i> 07.30 WIB - Selesai</span>
+                          <span><i class="icon-calendar"></i> Minggu, 31 Desember 2023</span>
+                          <span><i class="icon-home"></i> RM Pendopo Andaru, Nganjuk</span>
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-6 col-sm-6 text-center">
+
+                    <div class="col-md-6 col-sm-6">
                       <div class="event-wrap animate-box">
-                        <h3 style="color: black;">Resepsi Penikahan</h3>
+                        <h3 style="color:black;">Resepsi Pernikahan</h3>
                         <div class="event-col">
-                          <span style="color: black; font-size:  17px !important;">
-                            <i style="color: black; font-size:  17px !important;" class="icon-clock"></i> 11.30 - 13.30 WIB </span>
-                          <!-- <span style="color: black;">13.30 WIB</span> -->
-                          <span style="color: black; font-size:  17px !important;">
-                            <i style="color: black; font-size:  17px !important;" class="icon-calendar"></i> Minggu, 31 Desember 2023 </span>
-                          <span style="color: black;font-size:  17px !important">
-                            <i style="color: black;font-size:  17px !important" class="icon-home"></i> RM Pendopo Andaru, Jl. Lawu, Kramat, Nganjuk </span>
+                          <span><i class="icon-clock"></i> 11.30 - 13.30 WIB</span>
+                          <span><i class="icon-calendar"></i> Minggu, 31 Desember 2023</span>
+                          <span><i class="icon-home"></i> RM Pendopo Andaru, Nganjuk</span>
                         </div>
                       </div>
                     </div>
+
                   </div>
-                  <div class="col-md-10 text-center">
-                    <div class="col-md-10 animate-box" style="padding: 15px;">
-                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.6527746263414!2d111.91036377413519!3d-7.612709375254744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e784ba2450b9c8f%3A0x7c35c8364bb66f7c!2sRM%20Pendopo%20Andaru!5e0!3m2!1sid!2ssg!4v1701392291610!5m2!1sid!2ssg" width="100%" height="300px" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; border-radius: 15px; margin-top: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <div style="margin-top: 10px;">
-                        <a id="loc-btn" 
+
+                  <!-- MAP -->
+                  <div class="row text-center" style="margin-top:25px;">
+                    <div class="col-md-12 animate-box">
+
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.4989261000746!2d111.9129387!3d-7.612714699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e784ba2450b9c8f%3A0x7c35c8364bb66f7c!2sRM%20Pendopo%20Andaru!5e1!3m2!1sid!2sid!4v1766035709685!5m2!1sid!2sid" 
+                        width="330" height="250" style="border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;" 
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                      </iframe>
+
+                      <div style="margin-top:12px;">
+                        <a id="loc-btn"
                           href="https://maps.app.goo.gl/y9qW5NLnBFxw4cQy5"
                           target="_blank"
-                          style="font-weight: bold; font-family: 'Clambake October Six', sans-serif; box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;">
-                              <i class="fa fa-map-marker"></i> &nbsp;&nbsp; LIHAT LOKASI
+                          style="font-weight:bold;
+                                  font-family:'Clambake October Six', sans-serif;
+                                  box-shadow:rgb(38,57,77) 0px 20px 30px -10px;">
+                          <i class="fa fa-map-marker"></i> &nbsp; LIHAT LOKASI
                         </a>
+                      </div>
+
                     </div>
                   </div>
+
                 </div>
               </div>
+
+              <!-- DEKORASI -->
+              <img src="{{ url_for('static', filename='images/bunga-biru.svg') }}"
+                  alt=""
+                  style="position:absolute;
+                          bottom:-50px;
+                          left:-40px;
+                          width:380px;
+                          z-index:2;
+                          pointer-events:none;">
             </div>
 
             <!-- CERITA CINTA -->
@@ -230,7 +382,7 @@
               <div class="container">
                 <div class="row" style="padding-top: 100px;">
                   <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                    <h2 style="color: rgb(45, 94, 156);">Our Love Story</h2>
+                    <h2 style="color: rgb(45, 94, 156);margin-top: 30px;">Our Love Story</h2>
                   </div>
                 </div>
                 <div class="row">
@@ -302,27 +454,14 @@
               </div>
             </div>
 
-            <!-- Wedding Gift Section -->
-            <div id="fh5co-gift" style="background-image:url('/static/images/bg-utama.jpeg'); background-size: cover; background-position:center; padding: 60px 0;">
-              <div class="container text-center">
-                <h2 style="color: rgb(45, 94, 156); font-family: 'Sacramento', Arial, serif;
-                font-size: 40px; font-weight: bold;">Wedding Gift</h2>
-                <p style="font-size: 12px; margin-bottom: 25px;"> Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun apabila memberi adalah bentuk tanda kasih, Anda dapat memberikan hadiah secara digital melalui rekening berikut: </p>
-                <div style="background:white; padding:20px; border-radius:15px; width:90%; margin:auto; box-shadow: rgba(0,0,0,0.16) 0px 3px 6px, rgba(0,0,0,0.23) 0px 3px 6px;">
-                  <h4 style="margin-bottom: 5px;">BANK BCA</h4>
-                  <p id="textToCopy" style="margin:0; font-weight:bold;">123456789 - Restian Hanifia</p>
-                  <button id="copyBtn" style="margin-top:10px; padding:8px 15px; border-radius:8px; background-color:rgb(1,130,216); color:white; border:none;">Salin Rekening</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Ucapan Tamu Undangan Section -->
-            <div id="fh5co-rsvp" style="padding: 60px 0; background-image:url('/static/images/bg.jpg'); background-size: cover; background-position:center;">
+            <!-- UCAPAN TAMU UNDANGAN -->
+            <div id="fh5co-rsvp" style="background-image:url('/static/images/bg.jpg'); background-size: cover; background-position:center;
+              min-height: 95dvh;">
               <div class="container">
                 <div class="row text-center">
                   <h2 style="color: rgb(255, 255, 255); font-family: 'Sacramento', Arial, serif;
-                  font-size: 40px; font-weight: bold; margin: 0 auto;">Ucapan & Doa</h2>
-                  <p style="font-size: 17px;color: rgb(255, 255, 255);">
+                  font-size: 40px; font-weight: bold; margin: 0 auto; padding-top: 30px;">Ucapan & Doa</h2>
+                  <p style="font-size: 17px;color: rgb(255, 255, 255); width: 330px; margin: 0 auto;">
                     Merupakan suatu kehormatan dan kebahagiaan apabila Bapak/Ibu/Saudara/i 
                     berkenan memberikan doa restu kepada kami.
                   </p>
@@ -382,9 +521,7 @@
                             <i class="fa fa-commenting"></i>&nbsp;&nbsp; KIRIM PESAN
                             </button>
                         </div>
-
                     </div>
-
                 </form>
                 <!-- List Pesan dari Google Script -->
                 <iframe class="wow zoomIn" 
@@ -399,7 +536,105 @@
               </div>
             </div>
 
-            <!-- Penutup Section -->
+            <!-- WEDDING GIFT -->
+            <div id="fh5co-gift" class="container-fluid position-relative"
+                style="width:100%; margin:0; padding:0; overflow:hidden;">
+
+                <div class="gift-box-wrapper">
+
+                    <!-- BOX putih transparan -->
+                    <div class="gift-box">
+
+                        <!-- Judul -->
+                        <div class="container py-0">
+                            <div class="mb-0 mt-4 text-center mx-auto wow zoomIn"
+                                data-wow-delay="0.6s" style="max-width: 800px;">
+
+                                <h5 style="font-weight: bold; margin-top: 40px; font-size: 30px;
+                                    font-family: 'Sacramento', cursive; color:#2d5e9c;">
+                                    Wedding Gift
+                                </h5>
+
+                                <p style="margin-top: 20px; padding: 0 20px;
+                                    font-family:'Alegreya Sans', sans-serif;
+                                    color: #555; font-size: 16px;">
+                                    Doa restu Anda merupakan karunia yang sangat berarti bagi kami.
+                                    Namun apabila memberi adalah bentuk tanda kasih,
+                                    Anda dapat memberikan hadiah secara digital.
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <!-- Tombol Toggle -->
+                        <div class="col-12 text-center mt-4 wow fadeInDown" data-wow-delay="0.6s">
+                            <button id="toggleGiftBtn" type="button"
+                                class="btn btn-dark mb-3"
+                                style="border-radius: 30px; font-size: 14px;
+                                font-family:'Alegreya Sans', sans-serif;
+                                box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;">
+                                <i class="fa fa-gift"></i>&nbsp;&nbsp; KLIK DISINI
+                            </button>
+                        </div>
+
+                        <!-- Container Hadiah -->
+                        <div id="giftContainer" style="display:none;">
+
+                            <!-- Card Rekening -->
+                            <div class="row wow zoomIn" data-wow-delay="0.6s"
+                                style="margin: 0 auto 30px auto; width: 300px;">
+
+                                <div class="card p-0"
+                                    style="background-image: url('/static/images/bg-utama.jpeg');
+                                    background-size: cover;
+                                    border-radius: 30px;
+                                    padding: 7px;">
+
+                                    <div class="card-body text-center"
+                                        style="border-radius: 20px;
+                                        font-family:'Alegreya Sans', sans-serif;
+                                        box-shadow: 0 10px 25px rgba(0,0,0,0.12);">
+
+                                        <i class="fas fa-money-check"
+                                            style="font-size: 25px; color: #2d5e9c;"></i>
+
+                                        <h4 style="color:#2d5e9c;">Rekening</h4>
+
+                                        <p style="font-size: 15px; margin-top: 10px;">
+                                            Bank: <strong>BCA</strong><br>
+                                            No. Rekening:
+                                            <strong>123456789</strong><br>
+                                            Nama:
+                                            <strong>Restian Hanifia</strong>
+                                        </p>
+
+                                        <!-- Hidden text -->
+                                        <p id="textToCopy"
+                                            style="position:absolute; left:-9999px;">
+                                            123456789
+                                        </p>
+
+                                        <!-- Tombol Copy -->
+                                        <div class="text-center mt-2">
+                                            <a id="copyBtn" class="btn btn-sm btn-dark"
+                                                style="border-radius: 30px;
+                                                font-size: 14px;
+                                                font-family:'Alegreya Sans', sans-serif;">
+                                                Salin Rekening
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PENUTUP -->
             <div id="fh5co-end" style="background-image:url('/static/images/bg.jpg'); background-size: cover; background-position:center; padding: 80px 0; color:white; text-align:center;">
               <h2 style="font-family:'Sacramento', serif; font-size:50px;">Terima Kasih</h2>
               <p style="font-size: 14px; margin-top:10px;"> Merupakan sebuah kehormatan dan kebahagiaan bagi kami apabila Anda berkenan hadir memberikan doa restu. <br>Wassalamu'alaikum Warahmatullahi Wabarakatuh. </p>
@@ -407,42 +642,45 @@
 
           </header>
           <!-- ===================== NAVBAR BAWAH (awalnya disembunyikan) ===================== -->
-          <nav id="bottomNav" class="fixed-bottom navbar mb-4" style="display: none; box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; 
-            background-color: white; width: 50%;">
-            <a class="nav-link sosmed" href="#homewedding" style="background-color: rgb(1, 130, 216); border-radius: 5px; padding: 7px 8px 6px 8px;">
+          <nav id="bottomNav" class="fixed-bottom navbar mb-4" 
+            style="display:none; width: 260px; box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            background: radial-gradient(circle at center, #53a9d1 0%, #2e6bbb 50%);
+            transition: background 0.3s ease-in-out;">
+            <!-- <a class="nav-link sosmed" href="#homewedding" style="background-color: rgb(1, 130, 216); border-radius: 5px; padding: 7px 8px 6px 8px;">
               <i class="fa fa-home" style="color: white; font-size: 23px; padding-bottom: 2px;"></i>
+            </a> -->
+            <a class="nav-link sosmed" href="#fh5co-couple" style="background-color: white; border-radius: 5px; padding: 7px 8px 6px 8px;">
+              <i class="fa fa-heart" style="color: rgb(1, 130, 216); font-size: 21px; padding-bottom: 2px;"></i>
             </a>
-            <a class="nav-link sosmed" href="#fh5co-couple" style="background-color: rgb(1, 130, 216); border-radius: 5px; padding: 7px 8px 6px 8px;">
-              <i class="fa fa-heart" style="color: white; font-size: 21px; padding-bottom: 2px;"></i>
+            <a class="nav-link sosmed" href="#fh5co-event" style="background-color: white; border-radius: 5px; padding: 7px 8px 6px 8px;">
+              <i class="fa fa-calendar" style="color: rgb(1, 130, 216); font-size: 21px; padding-bottom: 3px;"></i>
             </a>
-            <a class="nav-link sosmed" href="#fh5co-rsvp" style="background-color: rgb(1, 130, 216); border-radius: 5px; padding: 7px 8px 6px 8px;">
-              <i class="fa fa-commenting" style="color: white; font-size: 21px; padding-bottom: 3px;"></i>
+            <a class="nav-link sosmed" href="#fh5co-rsvp" style="background-color: white; border-radius: 5px; padding: 7px 8px 6px 8px;">
+              <i class="fa fa-commenting" style="color: rgb(1, 130, 216); font-size: 21px; padding-bottom: 3px;"></i>
             </a>
-            <a class="nav-link sosmed" href="#eventdate" style="background-color: rgb(1, 130, 216); border-radius: 5px; padding: 7px 8px 6px 8px;">
-              <i class="fa fa-calendar" style="color: white; font-size: 21px; padding-bottom: 3px;"></i>
+            <a class="nav-link sosmed" href="#fh5co-gift" style="background-color: white; border-radius: 5px; padding: 7px 8px 6px 8px;">
+              <i class="fa fa-gift" style="color: rgb(1, 130, 216); font-size: 23px; padding-bottom: 2px;"></i>
             </a>
           </nav>
 
-          
+          <!-- ===================== AUDIO PLAYER ===================== -->
+          <div id="audio-container" style="display: none;">
+              <audio id="song" loop muted>
+                  <source src="{{ url_for('static', filename='song/song2.mp3') }}" type="audio/mpeg"/>
+              </audio>
 
-          
+              <!-- Tombol Play/Pause -->
+              <button id="audio-control" class="audio-btn" style="border: none;">
+                  <i id="audio-icon" class="fa fa-play" style=""></i>
+              </button>
+          </div>
         </div>
 
         <!-- Kolom kanan -->
         <div class="d-none d-md-block col-md-1 col-lg-2 col-xl-3" style="background-color: #ffffff;"></div>
       </div>
 
-    <div class="gototop js-top">
-      <a href="#" class="js-gotop">
-        <i class="icon-arrow-up"></i>
-      </a>
-    </div>
-    <div id="audio-container">
-      <audio id="song" autoplay loop>
-        <source src="{{ url_for('static', filename='song/song2.mp3') }}" type="audio/mp3">
-      </audio>
-      <div class="audio-icon-wrapper"></div>
-    </div>
+
     <!-- jQuery -->
     <script src="{{ url_for ('static', filename='js/jquery.min.js') }}"></script>
     <!-- jQuery Easing -->
@@ -464,6 +702,8 @@
     <script src="{{ url_for ('static', filename='js/simplyCountdown.js') }}"></script>
     <!-- Main -->
     <script src="{{ url_for ('static', filename='js/main.js') }}"></script>
+    
+    <!-- JS COUNTDOWN -->
     <script>
       simplyCountdown('.simply-countdown', {
         year: 2023,
@@ -472,6 +712,8 @@
         seconds: 8,
       });
     </script>
+
+    <!-- UCAPAN -->
     <script>
       window.addEventListener("load", function() {
         const form = document.getElementById('my-form');
@@ -494,73 +736,118 @@
         });
       });
     </script>
-    <!-- Nama Tamu -->
+
+    <!-- NAMA TAMU -->
     <script>
       const urlParams = new URLSearchParams(window.location.search);
-      const nama = urlParams.get('to', 'nama');
-      console.log(nama);
+      let nama = urlParams.get('to');
+
+      // default nama jika parameter kosong / tidak ada
+      if (!nama || nama.trim() === "") {
+        nama = "Nama Tamu Undangan";
+      }
+
       const namaContainer = document.querySelector('.headernya h4 span');
-      namaContainer.innerText = nama;
-      document.querySelector('#nama').value = nama;
+      if (namaContainer) {
+        namaContainer.innerText = nama;
+      }
+
+      const inputNama = document.querySelector('#nama');
+      if (inputNama) {
+        inputNama.value = nama;
+      }
     </script>
+
+    <!-- AUDIO + NAVBAR -->
     <script>
-      const rootElement = document.querySelector(":root");
+      const openBtn = document.getElementById("open");
+      const navbar = document.getElementById("bottomNav");
+      const rootElement = document.documentElement;
+
+      const audioContainer = document.getElementById("audio-container");
+      const song = document.getElementById("song");
+      const audioBtn = document.getElementById("audio-control");
+      const audioIcon = document.getElementById("audio-icon");
 
       function disableScroll() {
         window.onscroll = () => window.scrollTo(0, 0);
-        if (rootElement) rootElement.style.scrollBehavior = 'auto';
+        rootElement.style.scrollBehavior = 'auto';
       }
 
       function enableScroll() {
         window.onscroll = null;
-        if (rootElement) rootElement.style.scrollBehavior = 'smooth';
-        playAudio();
-        showNavbar();
-        const target = document.getElementById('weddings');
-        if (target) {
-          smoothConstantScroll(target, 25); // kecepatan 2px per frame
-        }
+        rootElement.style.scrollBehavior = 'smooth';
       }
 
-      function smoothConstantScroll(element, pixelsPerFrame) {
-        const start = window.scrollY;
-        const end = element.getBoundingClientRect().top + start;
-        const distance = end - start;
-        const direction = distance > 0 ? 1 : -1;
+      function openInvitation() {
+        sessionStorage.setItem("opened", "true");
 
-        function step() {
-          const current = window.scrollY;
-          if ((direction > 0 && current < end) || (direction < 0 && current > end)) {
-            window.scrollBy(0, direction * pixelsPerFrame);
-            requestAnimationFrame(step);
-          } else {
-            // pastikan posisi tepat di target
-            window.scrollTo(0, end);
-          }
-        }
-        requestAnimationFrame(step);
+        // sembunyikan tombol buka
+        openBtn.style.display = "none";
+
+        // tampilkan navbar
+        navbar.style.display = "flex";
+        navbar.style.opacity = 0;
+        navbar.style.transition = "opacity 0.8s ease";
+        requestAnimationFrame(() => navbar.style.opacity = 1);
+
+        // tampilkan audio control
+        audioContainer.style.display = "block";
+
+        enableScroll();
+        playAudio();
       }
 
       function playAudio() {
-        const song = document.querySelector('#song');
-        if (song) {
-          song.volume = 0.6;
-          song.play().catch(err => console.warn("Audio gagal diputar:", err));
-        }
+        if (!song) return;
+
+        song.muted = false;
+        song.volume = 0.6;
+
+        song.play().then(() => {
+          audioIcon.className = "fa fa-pause";
+        }).catch(() => {
+          // jika autoplay gagal, tetap tampilkan tombol play
+          audioIcon.className = "fa fa-play";
+        });
       }
 
-      function showNavbar() {
-        const navbar = document.getElementById("bottomNav");
-        if (navbar) {
-          navbar.style.display = "flex";
-          navbar.style.opacity = 0;
-          navbar.style.transition = "opacity 0.8s ease";
-          requestAnimationFrame(() => {
-            navbar.style.opacity = 1;
-          });
+      // toggle play / pause
+      audioBtn.addEventListener("click", () => {
+        if (song.paused) {
+          song.muted = false;
+          song.play();
+          audioIcon.className = "fa fa-pause";
+        } else {
+          song.pause();
+          audioIcon.className = "fa fa-play";
         }
-      }
-      disableScroll();
+      });
+
+      // kondisi awal halaman
+      window.addEventListener("load", () => {
+        sessionStorage.removeItem("opened");
+        openBtn.style.display = "inline-block";
+        navbar.style.display = "none";
+        audioContainer.style.display = "none";
+        disableScroll();
+      });
     </script>
+
+    <!-- JS GIFT -->
+    <script>
+      document.getElementById("toggleGiftBtn").onclick = function () {
+          const box = document.getElementById("giftContainer");
+          box.style.display = box.style.display === "none" ? "block" : "none";
+      };
+
+      document.getElementById("copyBtn").onclick = function () {
+          const text = document.getElementById("textToCopy").innerText;
+          navigator.clipboard.writeText(text).then(() => {
+              alert("Nomor rekening berhasil disalin");
+          });
+      };
+    </script>
+
   </body>
 </html>
