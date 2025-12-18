@@ -96,19 +96,39 @@
         z-index: 9999;
       }
 
+    /* DEKORASI */
+    .dekor-fade-right,
+    .dekor-fade-left {
+      opacity: 0;
+      animation-duration: 1.4s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-out;
+    }
+
+    /* kanan → kiri */
+    .dekor-fade-right.animate {
+      animation-name: fadeInRight;
+    }
+
+    /* kiri → kanan */
+    .dekor-fade-left.animate {
+      animation-name: fadeInLeft;
+    }
     </style>
 
   </head>
   <body>
     <div class="row g-0">
       <!-- Kolom kiri -->
-      <div class="d-none d-md-block col-md-1 col-lg-2 col-xl-3" style="background-color: #ffffff;"></div>
+      <div class="col-md-1 col-lg-2 col-xl-3" style="background-color: #ffffff;"></div>
+      
       <!-- Kolom tengah HOME -->
-      <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+      <div class="col-lg-5 col-md-10 col-xl-4 mx-auto">
         <div class="fh5co-loader"></div>
           <header id="fh5co-header" class="fh5co-cover" role="banner" style="" data-stellar-background-ratio="0.5">
+            
             <!-- HOME -->
-            <div class="container" id="homewedding" style="min-height:107dvh; 
+            <div class="container" id="homewedding" style="position: relative; min-height:111dvh; 
                 width:100%; 
                 margin:0; 
                 padding:0;
@@ -146,7 +166,7 @@
             </div>
 
             <!-- COUNTDOWN -->
-            <div class="container" style="min-height:107dvh; 
+            <div class="container" style="position: relative; min-height:111dvh; 
               width:100%; 
               margin:0; 
               padding:0;
@@ -157,14 +177,14 @@
               <!-- Div paling atas: The Wedding Of -->
               <div class="text-center animate-box">
                 <div style="margin-top: 60px;"></div>
-                <span id="weddings" style="color: white !important; font-size: 17px !important; 
+                <span style="color: white !important; font-size: 17px !important; 
                   font-weight: bold; font-family: 'Clambake October Six', sans-serif !important;"> The Wedding Of </span>
                 <h1 style="font-family: 'Sacramento', Arial, serif; 
                   color: white !important; font-size: 50px !important;"> Restian &amp; Ihyak </h1>
               </div>
               
               <!-- Konten utama -->
-              <div class="row">
+              <div class="row"id="weddings">
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" style="margin-top: 250px;">
                   <p style="font-family: 'Clambake October Six', sans-serif; 
                     color: white; font-size: 17px;"> Kami berharap Anda <br> menjadi bagian dari hari istimewa kami </p>
@@ -288,12 +308,24 @@
 
             <!-- EVENT WEDDING -->
             <div id="fh5co-event" class="fh5co-bg"
-                style="min-height:110dvh;
+                style="min-height:125dvh;
                         display:flex;
                         justify-content:center;
                         padding:40px 0;
                         position:relative;
                         background-color: #fff;">
+              
+              <!-- DEKORASI KANAN ATAS -->
+              <img src="{{ url_for('static', filename='images/bunga-biru-atas.svg') }}"
+              alt=""
+              class="dekor-fade-right"
+              style="position:absolute;
+                      top:-40px;
+                      right:-40px;
+                      width:300px;
+                      transform: rotate(180deg);
+                      z-index:2;
+                      pointer-events:none;">
 
               <!-- WRAPPER TENGAH -->
               <div class="event-wrapper"
@@ -308,7 +340,7 @@
                   <!-- JUDUL -->
                   <div class="row">
                     <div class="col-md-12 text-center fh5co-heading animate-box">
-                      <h2 style="color:rgb(45,94,156);">Acara <br> Pernikahan</h2>
+                      <h2 style="color:rgb(45,94,156); margin-top: 70px;">Acara Pernikahan</h2>
                     </div>
                   </div>
 
@@ -365,24 +397,26 @@
                 </div>
               </div>
 
-              <!-- DEKORASI -->
+              <!-- DEKORASI KIRI BAWAH -->
               <img src="{{ url_for('static', filename='images/bunga-biru.svg') }}"
-                  alt=""
-                  style="position:absolute;
-                          bottom:-50px;
-                          left:-40px;
-                          width:380px;
-                          z-index:2;
-                          pointer-events:none;">
+              alt=""
+              class="dekor-fade-left"
+              style="position:absolute;
+                      bottom:-50px;
+                      left:-40px;
+                      width:300px;
+                      z-index:2;
+                      pointer-events:none;">
+              
             </div>
 
             <!-- CERITA CINTA -->
-            <div id="fh5co-couple-story" style="background-image: url('/static/images/bg-utama.jpeg'); background-position: center; 
+            <div id="fh5co-couple-story" style="background-image: url('/static/images/...'); background-position: center; 
               background-size: cover; background-repeat: no-repeat;">
               <div class="container">
-                <div class="row" style="padding-top: 100px;">
+                <div class="row" style="padding-top: 10px;">
                   <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                    <h2 style="color: rgb(45, 94, 156);margin-top: 30px;">Our Love Story</h2>
+                    <h2 style="color: rgb(45, 94, 156);margin-top: 30px;">Kisah Cinta Kami</h2>
                   </div>
                 </div>
                 <div class="row">
@@ -677,7 +711,7 @@
         </div>
 
         <!-- Kolom kanan -->
-        <div class="d-none d-md-block col-md-1 col-lg-2 col-xl-3" style="background-color: #ffffff;"></div>
+        <div class="col-md-1 col-lg-2 col-xl-3" style="background-color: #ffffff;"></div>
       </div>
 
 
@@ -847,6 +881,23 @@
               alert("Nomor rekening berhasil disalin");
           });
       };
+    </script>
+
+    <!-- JS DEKORASI -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate");
+              observer.unobserve(entry.target); // hanya sekali
+            }
+          });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll(".dekor-fade-right, .dekor-fade-left")
+          .forEach(el => observer.observe(el));
+      });
     </script>
 
   </body>
