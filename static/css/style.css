@@ -2537,3 +2537,50 @@ form label {
 .sosmed:hover {
   text-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
 }
+
+
+/* LOKASI MAPS */
+#loc-btn { 
+    position: relative;
+    overflow: hidden;
+    font-size: 15px;
+    padding: 15px 25px;
+    border-radius: 30px;
+    color: white !important; 
+    background: radial-gradient(circle at center, #53a9d1 0%, #2e6bbb 70%);
+    transition: background 0.3s ease-in-out;
+    display: inline-block;
+    text-decoration: none;
+    
+    /* Hilangkan tepi hitam */
+    border: none;
+    outline: none;
+}
+#loc-btn:hover { 
+    color: #2e6bbb !important; 
+    background: radial-gradient(circle at center, #ffffff 0%, #def0f2 50%, #ffffff 100%);
+    text-decoration: none;
+}
+
+/* KIRIM PESAN */
+#send-btn { 
+    position: relative;
+    overflow: hidden;
+    font-size: 15px;
+    padding: 15px 25px;
+    border-radius: 30px;
+    color: white !important; 
+    background: radial-gradient(circle at center, #53a9d1 0%, #2e6bbb 70%);
+    transition: background 0.3s ease-in-out;
+    display: inline-block;
+    text-decoration: none;
+    
+    /* Hilangkan tepi hitam */
+    border: none;
+    outline: none;
+}
+#send-btn:hover { 
+    color: #2e6bbb !important; 
+    background: radial-gradient(circle at center, #ffffff 0%, #def0f2 50%, #ffffff 100%);
+    text-decoration: none;
+}
