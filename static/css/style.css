@@ -21,6 +21,15 @@ body {
   line-height: 1.7;
   color: #828282;
   background: #fff;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#fh5co-event, #fh5co-couple {
+  position: relative;
+  overflow: hidden; /* Mencegah elemen keluar dari area */
 }
 
 #page {
