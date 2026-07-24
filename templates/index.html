@@ -118,6 +118,202 @@
     .dekor-fade-left.animate {
       animation-name: fadeInLeft;
     }
+
+    .event-grid{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:25px;
+        margin-top:0px;
+    }
+
+    /* ================= CARD ================= */
+
+    .event-card{
+        display:flex;
+        width:300px;
+        background:#F5EEDB;
+        border-radius:15px;
+        overflow:hidden;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+
+    .event-side{
+        width:75px;
+        background:#2D5E9C;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .event-side span{
+        writing-mode:vertical-rl;
+        transform:rotate(180deg);
+        color:#fff;
+        font-size:26px;
+        letter-spacing:2px;
+        font-family:'Cormorant Garamond', serif;
+        font-weight:600;
+    }
+
+    .event-content{
+        flex:1;
+        padding:28px;
+    }
+
+    .event-date{
+        display:flex;
+        align-items:flex-start;
+        gap:18px;
+    }
+
+    .date-number{
+        font-size:72px;
+        line-height:1;
+        color:#7B7159;
+        font-family:'Cormorant Garamond', serif;
+    }
+
+    .date-text{
+        margin-top:10px;
+    }
+
+    .date-text strong{
+        display:block;
+        font-size:18px;
+        color:#555;
+    }
+
+    .date-text span{
+        display:block;
+        color:#777;
+        font-size:16px;
+    }
+
+    .event-content hr{
+        margin:20px 0;
+        border:0;
+        border-top:1px solid #d8ccb3;
+    }
+
+    .event-info h5{
+        margin:18px 0 8px;
+        font-size:15px;
+        color:#7B7159;
+        letter-spacing:1px;
+    }
+
+    .event-line{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        margin-bottom:12px;
+        color:#555;
+        font-size:15px;
+    }
+
+    .event-line i{
+        color:#7B7159;
+        width:18px;
+        text-align:center;
+    }
+
+    .live-btn{
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        margin-top:18px;
+        background:#2D5E9C;
+        color:#fff;
+        padding:10px 22px;
+        border-radius:30px;
+        text-decoration:none;
+        font-size:13px;
+        letter-spacing:1px;
+        transition:.3s;
+    }
+
+    .live-btn:hover{
+        background:#2D5E9C;
+        color:#fff;
+    }
+
+    /* ================= MIRROR RESEPSI ================= */
+
+    .event-card-reverse{
+        flex-direction:row-reverse;
+    }
+
+    .event-card-reverse .event-side span{
+        transform:none;
+    }
+
+    .event-card-reverse .event-content{
+        text-align:right;
+    }
+
+    .event-card-reverse .event-date{
+        flex-direction:row-reverse;
+    }
+
+    .event-card-reverse .event-line{
+        flex-direction:row-reverse;
+    }
+
+    .event-card-reverse .live-btn{
+        float:right;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media(max-width:768px){
+
+        .event-grid{
+            gap:18px;
+        }
+
+        .event-card{
+            width:100%;
+        }
+
+        .event-side{
+            width:65px;
+        }
+
+        .event-side span{
+            font-size:22px;
+        }
+
+        .date-number{
+            font-size:58px;
+        }
+
+        /* Di HP jangan mirror supaya mudah dibaca */
+        .event-card-reverse{
+            flex-direction:row;
+        }
+
+        .event-card-reverse .event-side span{
+            transform:rotate(180deg);
+        }
+
+        .event-card-reverse .event-content{
+            text-align:left;
+        }
+
+        .event-card-reverse .event-date{
+            flex-direction:row;
+        }
+
+        .event-card-reverse .event-line{
+            flex-direction:row;
+        }
+
+        .event-card-reverse .live-btn{
+            float:none;
+        }
+
+    }
     </style>
 
   </head>
@@ -348,41 +544,121 @@
                 <!-- DEKORASI KANAN ATAS (Mengambang di paling atas) -->
                 <img src="{{ url_for('static', filename='images/bunga-biru-atas.svg') }}"
                     alt="" class="dekor-fade-right"
-                    style="position:absolute; top:-40px; right:-30px; width:220px; transform: rotate(180deg); z-index:10; pointer-events:none;">
+                    style="position:absolute; top:0px; right:-30px; width:220px; transform: rotate(180deg); z-index:10; pointer-events:none;">
 
                 <!-- WRAPPER UTAMA -->
-                <div class="event-wrapper" style="width: 100%; max-width: 800px; text-align: center;">
+                <div class="event-wrapper" style="width: 100%; max-width: 800px; text-align: center; 
+                margin-top: 250px;">
 
                     <!-- JUDUL -->
-                    <div class="animate-box" style="margin-bottom: 40px;">
-                        <h2 style="color:rgb(45,94,156); font-size: clamp(40px, 6vw, 50px); 
-                        font-family: 'Sacramento', Arial, serif;">Acara Pernikahan</h2>
+                    <div class="animate-box" style="margin-bottom: 10px;">
+                        <h3 style="color:rgb(45,94,156); font-size: clamp(30px, 6vw, 40px); 
+                        font-family: 'Sacramento', Arial, serif; text-align: left;">Acara <br> Pernikahan</h3>
                     </div>
 
-                    <!-- GRID AKAD & RESEPSI -->
-                    <div class="row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-                        <div class="col-12 col-md-5">
-                            <div class="event-wrap animate-box" style="padding: 20px; border: 1px solid #eee; border-radius: 15px;">
-                                <h3 style="color:black; font-size: 18px;">Akad Nikah</h3>
-                                <div class="event-col" style="font-size: 14px;">
-                                    <span><i class="icon-clock"></i> 07.30 WIB - Selesai</span><br>
-                                    <span><i class="icon-calendar"></i> Minggu, 31 Desember 2023</span><br>
-                                    <span><i class="icon-home"></i> RM Pendopo Andaru, Nganjuk</span>
-                                </div>
-                            </div>
+                    <div class="event-grid">
+                      <!-- ================= AKAD ================= -->
+                      <div class="event-card">
+                          <div class="event-side">
+                              <span>AKAD NIKAH</span>
                         </div>
 
-                        <div class="col-12 col-md-5">
-                            <div class="event-wrap animate-box" style="padding: 20px; border: 1px solid #eee; border-radius: 15px;">
-                                <h3 style="color:black; font-size: 18px;">Resepsi Pernikahan</h3>
-                                <div class="event-col" style="font-size: 14px;">
-                                    <span><i class="icon-clock"></i> 11.30 - 13.30 WIB</span><br>
-                                    <span><i class="icon-calendar"></i> Minggu, 31 Desember 2023</span><br>
-                                    <span><i class="icon-home"></i> RM Pendopo Andaru, Nganjuk</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                          <div class="event-content">
+
+                              <div class="event-date">
+                                  <div class="date-number">31</div>
+
+                                  <div class="date-text">
+                                      <strong>MINGGU</strong>
+                                      <span>DESEMBER</span>
+                                      <span>2023</span>
+                                  </div>
+                              </div>
+
+                              <hr>
+
+                              <div class="event-info">
+
+                                  <div class="event-line">
+                                      <i class="icon-clock"></i>
+                                      <span>07.30 WIB - Selesai</span>
+                                  </div>
+
+                                  <h5>LOKASI ACARA :</h5>
+
+                                  <div class="event-line">
+                                      <i class="icon-home"></i>
+                                      <span>
+                                          RM Pendopo Andaru<br>
+                                          Nganjuk
+                                      </span>
+                                  </div>
+
+                                  <a href="#" class="live-btn">
+                                      <i class="icon-video"></i>
+                                      LIVE STREAMING
+                                  </a>
+
+                              </div>
+
+                          </div>
+
+                      </div>
+
+
+                      <!-- ================= RESEPSI ================= -->
+
+                      <div class="event-card event-card-reverse">
+
+                          <div class="event-side">
+                              <span>RESEPSI</span>
+                          </div>
+
+                          <div class="event-content">
+
+                              <div class="event-date">
+
+                                  <div class="date-number">31</div>
+
+                                  <div class="date-text">
+                                      <strong>MINGGU</strong>
+                                      <span>DESEMBER</span>
+                                      <span>2023</span>
+                                  </div>
+
+                              </div>
+
+                              <hr>
+
+                              <div class="event-info">
+
+                                  <div class="event-line">
+                                      <i class="icon-clock"></i>
+                                      <span>11.30 - 13.30 WIB</span>
+                                  </div>
+
+                                  <h5>LOKASI ACARA :</h5>
+
+                                  <div class="event-line">
+                                      <i class="icon-home"></i>
+                                      <span>
+                                          RM Pendopo Andaru<br>
+                                          Nganjuk
+                                      </span>
+                                  </div>
+
+                                  <a href="#" class="live-btn">
+                                      <i class="icon-video"></i>
+                                      LIVE STREAMING
+                                  </a>
+
+                              </div>
+
+                          </div>
+
+                      </div>
+
+                  </div>
 
                     <!-- MAP -->
                     <div class="animate-box" style="margin-top: 30px;">
@@ -414,7 +690,7 @@
               <div class="container">
                 <div class="row" style="padding-top: 10px;">
                   <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                    <h2 style="color: rgb(45, 94, 156);margin-top: 30px;">Kisah Cinta Kami</h2>
+                    <h2 style="font-family: 'Sacramento', Arial, serif; color: rgb(45, 94, 156);margin-top: 300px;">Kisah Cinta Kami</h2>
                   </div>
                 </div>
                 <div class="row">
